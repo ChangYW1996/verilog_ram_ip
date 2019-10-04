@@ -19,8 +19,8 @@ begin
 		time_cnt<=0;
 	else time_cnt<=time_cnt+1'b1;
 end
-assign wren=(time_cnt<=6'd0&&time_cnt>=6'd31);
-assign rden=(time_cnt<=6'd32&&time_cnt>=6'd63);
+	assign wren=(time_cnt>=6'd0&&time_cnt<=6'd31);
+	assign rden=(time_cnt>=6'd32&&time_cnt<=6'd63);
 
 always@(negedge clk_50M or  negedge RST_N )
 begin
